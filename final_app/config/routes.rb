@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   get "/users/new", to: "users#new", as: "new_user"
 
-  pst "/users", to: "users#create"
+  post "/users", to: "users#create"
+
+  get "/users/:id", to: "users#show"
+
+  get "/sign_in", to: "sessions#new"
+
+  post "/sessions", to: "sessions#create"
 
 end
   # The priority is based upon order of creation: first created -> highest priority.

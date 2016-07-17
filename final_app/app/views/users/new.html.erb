@@ -1,7 +1,7 @@
 <h1>New Users Sign Up Page</h1>
 <%= form_for @user do |f| %>
   <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>"
+    <%= f.text_field :first_name, placeholder: "First Name" %>
   </div>
   <div>
     <%= f.text_field :last_name, placeholder: "Last Name" %>
@@ -14,6 +14,12 @@
   </div>
   <div>
     <%= f.text_field :password, placeholder: "Password" %>
+  </div>
+  <div>
+    <%= f.text_field :interests, placeholder: "Interest" %>
+  </div>
+  <div>
+    <%= f.text_field :age, placeholder: "Age" %>
   </div>
   <%= f.submit "Sign Up" %>
 <% end %>
