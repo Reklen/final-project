@@ -1,0 +1,21 @@
+Welcome to the Mentors Index Page!
+<div>
+There are currently <%= @mentors.length %> mentors signed up!
+</div>
+<!-- <div>
+@user.first_name is matched with the following mentors
+</div> -->
+<ul>
+<% @mentors.each do |mentor| %>
+    <li><%= mentor.first_name %></li>
+<% end %>
+</ul>
+<% @mentors.each do |mentor| %>
+  <div>
+    <h3><%= mentor.first_name %></h3>
+    <% if @current_user %>
+      <%= button_to "Join", user_mentors_path(mentor) %>
+    <% end %>
+  </div>
+  <br>
+<% end %>

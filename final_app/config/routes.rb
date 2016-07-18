@@ -7,11 +7,26 @@ Rails.application.routes.draw do
 
   post "/users", to: "users#create"
 
+  get "/user/:user_id/edit(.:format)", to: "users#edit"
+
   get "/users/:id", to: "users#show"
 
   get "/sign_in", to: "sessions#new"
 
   post "/sessions", to: "sessions#create"
+
+  get "/mentors", to: "mentors#index"
+
+  get "/mentors/new", to: "mentors#new", as: "new_mentor"
+
+  post "/mentors", to: "mentors#create"
+
+  get "/users/:user_id/mentors", to: "user_mentors#index", as: "mentor_users"
+
+  post "/mentors/:mentor_id/users", to: "user_mentors#create", as: "user_mentors"
+
+
+
 
 end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :user_mentors
+  has_many :mentors, through: :user_mentors
+
   has_secure_password
 
   def self.confirm(params)
