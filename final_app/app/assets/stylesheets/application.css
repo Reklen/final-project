@@ -1,3 +1,22 @@
+body {
+  background-image: url(space.jpg);
+  color: white;
+  text-align: center;
+}
+
+nav {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+footer {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.stem-logos {
+  height: 100px;
+  width: 100px;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

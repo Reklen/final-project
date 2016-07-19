@@ -1,5 +1,48 @@
-<h1>Welcome to Users Index</h1>
 
-<div>
-There are currently <%= @users.length %> signed_up!
+<div class="container">
+  <div class="row">
+    <h1>Welcome to Hopper</h1>
+  </div>
+    <div class="row"></div>
+  <div class="row">
+    <div class="col s3"></div>
+  <div class="col s6">
+    <h3>About Hopper</h3>
+  </div>
+    <div class="col s3"></div>
+  </div>
+  <div class="row">
+    <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+  </div>
+  <div class="row">
+    <div class="col s3">
+      <%= image_tag("beaker.png", :alt => "Science", :class => "stem-logos") %>
+    </div>
+    <div class="col s3">
+      <%= image_tag("circuit2.png", :alt => "Technology", :class => "stem-logos") %>
+    </div>
+    <div class="col s3">
+      <%= image_tag("gears.png", :alt => "Engineering", :class => "stem-logos") %>
+    </div>
+    <div class="col s3">
+      <%= image_tag("math2.png", :alt => "Math", :class => "stem-logos") %>
+    </div>
+  </div>
+  <div class="row">
+    <p>Welcome to my app, it's designed to connect girls 10-18 who have an interest in STEM subjects with mentors who work in those areas. We want to empower girls and young women to continue with their interests, and find support from women like them when they can't find that support at home. With video chat capabilities, girls and mentors can connect wherever they are for mentoring, homework help, and encouragement.</p>
+  </div>
+
 </div>
