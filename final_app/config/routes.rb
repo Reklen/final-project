@@ -1,29 +1,48 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "students#index"
 
-  get "/users", to: "users#index", as: "users"
+  get "/students", to: "students#index", as: "students"
 
-  get "/users/new", to: "users#new", as: "new_user"
+  get "/students/new", to: "students#new", as: "new_student"
 
-  post "/users", to: "users#create"
+  post "/students", to: "students#create"
 
-  get "/user/:user_id/edit(.:format)", to: "users#edit"
+  get "/students/:id/edit", to: "students#edit"
 
-  get "/users/:id", to: "users#show"
+  patch "/students/:id/edit", to: "students#update"
 
-  get "/sign_in", to: "sessions#new"
+  put "/students/:id/edit", to: "students#update"
+
+  get "/students/:id", to: "students#show"
+
+  get "/sessions/new", to: "sessions#new"
 
   post "/sessions", to: "sessions#create"
+
+  get "/sign_up", to: "students#new"
+
+  delete "/session", to: "sessions#destroy"
 
   get "/mentors", to: "mentors#index"
 
   get "/mentors/new", to: "mentors#new", as: "new_mentor"
 
+  get "/mentors/:id", to: "mentors#show"
+
+
   post "/mentors", to: "mentors#create"
 
-  get "/users/:user_id/mentors", to: "user_mentors#index", as: "mentor_users"
+  get "/mentors/:id/edit", to: "mentors#edit"
 
-  post "/mentors/:mentor_id/users", to: "user_mentors#create", as: "user_mentors"
+  patch "/mentors/:id/edit", to: "mentors#update"
+
+  put "/mentors/:id/edit", to: "mentors#update"
+
+  # get "/mentor/:id/edit(.:format)", to: "users#edit"
+
+  get "/students/:student_id/mentors", to: "student_mentors#index", as: "mentor_students"
+
+  post "/mentors/:mentor_id/students", to: "student_mentors#create", as: "student_mentors"
 
 
 

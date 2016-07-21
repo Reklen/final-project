@@ -1,0 +1,32 @@
+<nav>
+    <div class="nav-wrapper #424242 grey">
+      <a href="/" class="brand-logo">Mentor App</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+
+        <% if current_user != nil %>
+          <% if current_user.user_t == 'mentors' %>
+              <li><%= link_to "Profile", mentors_path(current_user) %></li>
+              <li id= "sign-out"><%= link_to "Sign Out", logout, method: "delete" %> </li>
+
+              <% else %>
+
+                <li><%= link_to "Profile", students_path(current_user) %></li>
+                <li id= "sign-out"><%= link_to "Sign Out", logout, method: "delete" %> </li>
+                <li><%= link_to "Log In", sign_up_path %></li>
+
+        <% end %>
+
+ <!-- logout here -->
+
+            <li><%= link_to "Logout", '/sessions' %></li>
+
+      <% else %>
+
+            <li><%= link_to "Sign Up", sign_up_path %></li>
+
+          <% end %>
+      </ul>
+    </div>
+  </nav>

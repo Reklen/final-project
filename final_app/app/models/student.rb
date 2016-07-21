@@ -1,8 +1,8 @@
-class Mentor < ActiveRecord::Base
+class Student < ActiveRecord::Base
   attr_accessor :user_t
 
   has_many :user_mentors
-  has_many :users, through: :user_mentors
+  has_many :mentors, through: :user_mentors
 
   has_secure_password
 
@@ -28,7 +28,7 @@ def authenticate(unencrypted_password)
 end
 
   def self.confirm(params)
-    @mentor = Mentor.find_by({email: params[:email]})
-    @mentor.try(:authenticate, params[:password])
+    @student = Student.find_by({email: params[:email]})
+    @student.try(:authenticate, params[:password])
   end
 end

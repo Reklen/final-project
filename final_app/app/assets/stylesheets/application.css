@@ -1,5 +1,6 @@
 body {
-  background-image: url(space.jpg);
+  /*background-image: url(space.jpg);*/
+  background-color: green;
   color: white;
   text-align: center;
 }
@@ -16,6 +17,27 @@ footer {
   height: 100px;
   width: 100px;
 }
+
+.bodyDiv {
+  height: 200px;
+}
+
+.video {
+  height: 100px;
+}
+
+/*#login {
+  height: 50px;
+}
+
+#call {
+  height: 50px;
+}
+
+.ptext {
+  margin-top: 100px;
+}
+*/
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
