@@ -1,8 +1,9 @@
 class Student < ActiveRecord::Base
   attr_accessor :user_t
 
-  has_many :user_mentors
-  has_many :mentors, through: :user_mentors
+  belongs_to :mentor
+
+  #has_many :mentors, through: :user_mentors
 
   has_secure_password
 

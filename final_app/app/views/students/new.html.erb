@@ -1,6 +1,10 @@
 <div class="container">
-      <h1>New Users Sign Up Page</h1>
+      <h3>New Student Sign Up Page</h3>
+
       <%= form_for @student do |f| %>
+        <div>
+          <%= f.select :mentor_id, options_for_select(@mentors.pluck("first_name || ' ' || last_name", :id)) %>
+        </div>
         <div>
           <%= f.text_field :first_name, placeholder: "First Name" %>
         </div>
@@ -22,6 +26,8 @@
         <div>
           <%= f.text_field :age, placeholder: "Age" %>
         </div>
+
+
         <!-- the below could also be "Sign Up" -->
         <%= f.submit "Pick Your Mentor" %>
       <% end %>

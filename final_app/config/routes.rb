@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
-  root to: "students#index"
+  root to: "homes#index"
 
-  get "/students", to: "students#index", as: "students"
+  #get "/students", to: "students#index", as: "students"
+  #get "/students/new", to: "students#new", as: "new_student"
+  #post "/students", to: "students#create"
+  #get "/students/:id/edit", to: "students#edit"
+  #patch "/students/:id/edit", to: "students#update"
+  #put "/students/:id/edit", to: "students#update"
+  #get "/students/:id", to: "students#show"
+  #post "/students/:id/mentor_list", to: "students#select_mentor"
+  ##patient selects physician during sign up##
+  #get "/students/:id/mentor_list", to: "students#mentor_list", as: "mentor_list"
+  #associate patient-id with doctor-id'
+  #post "/students/:id/mentor_list", to: "students#select_mentor", as: "select_mentor_student"
 
-  get "/students/new", to: "students#new", as: "new_student"
-
-  post "/students", to: "students#create"
-
-  get "/students/:id/edit", to: "students#edit"
-
-  patch "/students/:id/edit", to: "students#update"
-
-  put "/students/:id/edit", to: "students#update"
-
-  get "/students/:id", to: "students#show"
+  resources :students
 
   get "/sessions/new", to: "sessions#new"
 
@@ -40,11 +41,9 @@ Rails.application.routes.draw do
 
   # get "/mentor/:id/edit(.:format)", to: "users#edit"
 
-  get "/students/:student_id/mentors", to: "student_mentors#index", as: "mentor_students"
+  # get "/students/:student_id/mentors", to: "student_mentors#index", as: "mentor_students"
 
-  post "/mentors/:mentor_id/students", to: "student_mentors#create", as: "student_mentors"
-
-
+  # post "/mentors/:mentor_id/students", to: "student_mentors#create", as: "student_mentors"
 
 
 end

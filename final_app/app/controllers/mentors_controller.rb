@@ -11,9 +11,9 @@ class MentorsController < ApplicationController
   end
 
   def create
-    mentor_params = params.require(:mentor).permit(:email, :first_name, :last_name, :username, :age, :location, :expertise, :availability, :password)
+    mentor_params = params.require(:mentor).permit(:email, :first_name, :last_name, :username, :age, :location, :expertise, :availability, :password, :password_digest)
     @mentor = Mentor.new(mentor_params)
-    if @mentor.save
+    if @mentor.save!
       login(@mentor, 'mentors')
       flash[:success] = "Profile created!"
       redirect_to "/mentors/#{@mentor.id}"

@@ -1,7 +1,8 @@
 class Mentor < ActiveRecord::Base
   attr_accessor :user_t
 
-  has_many :user_mentors
+  #has_many :user_mentors
+  has_many :students
   has_many :users, through: :user_mentors
 
   has_secure_password
@@ -11,7 +12,7 @@ class Mentor < ActiveRecord::Base
   validates :email, presence: true
   validates :password_digest, presence: true
 
-  validates_confirmation_of :password
+  # validates_confirmation_of :password
 
 def password=(unencrypted_password)
   @password = unencrypted_password
@@ -20,6 +21,10 @@ end
 
 def password
   @password
+end
+
+def full_name
+  "#{first_name} #{last_name}"
 end
 
 def authenticate(unencrypted_password)

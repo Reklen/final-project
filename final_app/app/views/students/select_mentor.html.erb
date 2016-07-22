@@ -1,0 +1,13 @@
+<div class="containter">
+  <% @mentors.each do |mentor| %>
+
+  <div><% mentor.first_name + " " + mentor.last_name %></div>
+  <div><%= mentor.email %></div>
+  <div><%= mentor.expertise %></div>
+
+
+  <% button_to "Add", select_mentor_path, params: {mentor_id: mentor.id} %>
+
+  <% end %>
+
+</div>
