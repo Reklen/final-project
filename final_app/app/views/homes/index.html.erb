@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row">
-    <h1>Welcome to Mentor App</h1>
+    <h1></h1>
   </div>
     <div class="row"></div>
   <div class="row">
@@ -12,39 +12,58 @@
     <div class="col s3"></div>
   </div>
   <div class="row">
-    <!-- Modal Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
- -->
-  <!-- Modal Structure -->
-  <!-- <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div> -->
+
+   <div class="slider">
+    <ul class="slides">
+      <li>
+        <%= image_tag("sciencegirls3.jpeg") %>
+        <div class="caption center-align">
+          <h3>Science</h3>
+          <h5 class="light grey-text text-lighten-3">Explore chemistry, physics, and biology with knowledgeable mentors.</h5>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("techgirls2.jpeg") %>
+        <div class="caption left-align">
+          <h3>Technology</h3>
+          <h5 class="light grey-text text-lighten-3">Interested in programming and computer sciences? Connect with knowledgeable women here.</h5>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("engineergirls4.jpg") %>
+        <div class="caption right-align">
+          <h3>Engineering</h3>
+          <h5 class="light grey-text text-lighten-3">Get support from experienced female engineers and learn valuable skills.</h5>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("mathgirls.jpg") %>
+        <div class="caption center-align">
+          <h3>Math</h3>
+          <h5 class="light grey-text text-lighten-3">Grow your math skills with support from female math experts.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
 
   </div>
-  <div class="row">
-    <div class="col s3">
-      <%= image_tag("beaker.png", :alt => "Science", :class => "stem-logos") %>
-    </div>
-    <div class="col s3">
-      <%= image_tag("circuit2.png", :alt => "Technology", :class => "stem-logos") %>
-    </div>
-    <div class="col s3">
-      <%= image_tag("gears.png", :alt => "Engineering", :class => "stem-logos") %>
-    </div>
-    <div class="col s3">
-      <%= image_tag("math2.png", :alt => "Math", :class => "stem-logos") %>
-    </div>
+
+  <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+        <script type="text/javascript">
+ $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+</script>
+
+  <div class="row paragraph">
+    <p>Welcome to my MentorMe, a place where girls with interest in STEM subjects connect with female expert mentors. We want to empower girls and young women to continue with their interests, and find support from professional women. With video chat capabilities, mentees and mentors can connect wherever they are for mentoring, homework help, and encouragement.</p>
   </div>
-  <div class="row">
-    <p>Welcome to my app, it's designed to connect girls 10-18 who have an interest in STEM subjects with mentors who work in those areas. We want to empower girls and young women to continue with their interests, and find support from women like them when they can't find that support at home. With video chat capabilities, girls and mentors can connect wherever they are for mentoring, homework help, and encouragement.</p>
-  </div>
-  <div class="row">
+  <div class="row paragraph">
     <%= link_to 'Mentor SignUp', new_mentor_path(@mentor) %> <%= link_to 'Student SignUp', new_student_path(@student) %>
   </div>
 

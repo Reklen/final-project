@@ -1,21 +1,14 @@
-Welcome to the Mentors Index Page!
-<div>
-There are currently <%= @mentors.length %> mentors signed up!
-</div>
-<!-- <div>
-@user.first_name is matched with the following mentors
-</div> -->
-<ul>
-<% @mentors.each do |mentor| %>
-    <li><%= mentor.first_name %></li>
-<% end %>
-</ul>
-<% @mentors.each do |mentor| %>
-  <div>
-    <h3><%= mentor.first_name %></h3>
-    <% if @current_user %>
-      <%= button_to "Join", user_mentors_path(mentor) %>
+<div class="container">
+  <div class="row">
+    List of Available Mentors
+    <ul>
+    <% @mentors.each do |mentor| %>
+        <li><%= mentor.first_name %> <%= mentor.last_name %></li>
+        <li><%= mentor.expertise %></li>
+        <li><%= link_to "Edit", mentors_path(mentor) %> </li>
+        <li>  <%= link_to "Remove", mentors_path(mentor), method: :delete, data: { confirm: "Are you sure?" } %></li>
     <% end %>
+    </ul>
+    <br>
   </div>
-  <br>
-<% end %>
+</div>

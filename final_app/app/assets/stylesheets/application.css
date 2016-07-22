@@ -3,6 +3,7 @@ body {
   background-color: white;
   color: black;
   text-align: center;
+  font-family: 'Varela Round', sans-serif;
 }
 
 nav {
@@ -13,9 +14,12 @@ footer {
   background: rgba(76, 175, 80, 0.1);
 }
 
-.stem-logos {
-  height: 100px;
-  width: 100px;
+.paragraph {
+  margin: 50px;
+}
+
+.caption {
+  background-color: rgba(16, 17, 28, 0.5);
 }
 
 .bodyDiv {

@@ -1,29 +1,32 @@
-<h1>New Mentors Sign Up Page</h1>
-<%= form_for @mentor do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+<div class="container">
+  <div class="row">
+    <h3>New Mentors Sign Up</h3>
+    <%= form_for @mentor do |f| %>
+      <div>
+        <%= f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+      <div>
+        <%= f.text_field :last_name, placeholder: "Last Name" %>
+      </div>
+      <div>
+        <%= f.text_field :username, placeholder: "Username" %>
+      </div>
+      <div>
+        <%= f.text_field :email, placeholder: "Email" %>
+      </div>
+      <div>
+        <%= f.text_field :password_digest, placeholder: "Password" %>
+      </div>
+      <div>
+        <%= f.text_field :expertise, placeholder: "Area of Expertise" %>
+      </div>
+      <div>
+        <%= f.text_field :age, placeholder: "Age" %>
+      </div>
+      <div>
+        <%= f.text_field :availability, placeholder: "Availability" %>
+      </div>
+      <%= f.submit "Sign Up" %>
+    <% end %>
   </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <div>
-    <%= f.text_field :username, placeholder: "Username" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.text_field :password_digest, placeholder: "Password" %>
-  </div>
-  <div>
-    <%= f.text_field :expertise, placeholder: "Area of Expertise" %>
-  </div>
-  <div>
-    <%= f.text_field :age, placeholder: "Age" %>
-  </div>
-  <div>
-    <%= f.text_field :availability, placeholder: "Availability" %>
-  </div>
-  <%= f.submit "Sign Up" %>
-<% end %>
-
+</div>

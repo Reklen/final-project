@@ -1,6 +1,6 @@
 <nav>
     <div class="nav-wrapper #7986cb indigo lighten-2">
-      <a href="/" class="brand-logo">Mentor App</a>
+      <a href="/" class="brand-logo center">MentorMe</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
 
@@ -23,7 +23,7 @@
             <li><%= link_to "Logout", '/sessions' %></li>
 
       <% else %>
-
+            <li><%= link_to "Sign In", '/sessions/new' %></li>
             <li><%= link_to "Sign Up", sign_up_path %></li>
 
           <% end %>
