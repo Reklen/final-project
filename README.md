@@ -4,7 +4,7 @@
 ##A mentorship app for girls with video chat capabilities
 
 
-![alt-text](https://github.com/cfcrawford/lighting-talks/blob/master/images/homepage.png "Home Page")
+![alt-text](https://github.com/cfcrawford/final-project/blob/master/final_app/app/assets/images/wireframe.pnghomepage.png "Home Page")
 
 
 #### Welcome to MentorMe, a video mentorship app for girls. My app is a Ruby on Rails full-stack application with full CRUD capabilites. It allows girls interested in STEM subjects to find capable, experienced mentors to inspire, encourage and instruct them to excel. Mentor-mentee pairs are encouraged to video chat about subjects, homework help, and informational interviews to encourage girls to pursue their passions.
@@ -19,7 +19,7 @@
 #### Inital Home Page Wireframe
 
 
-![alt-text](https://github.com/cfcrawford/lighting-talks/blob/master/images/wireframe.png "Wireframe")
+![alt-text](https://github.com/cfcrawford/final-project/blob/master/final_app/app/assets/images/wireframe.png "Wireframe")
 
 
 #### I had some challenges during the development phase, namely with associations and assigning a mentor to a student. The API was hard to format, but I plan to continue with the app and improve it, adding new features and user-friendly interfaces.
