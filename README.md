@@ -59,7 +59,7 @@
 ## Future Goals
 
 
-#### I plan to add more features, such as messaging between mentors and students, and allowing students to friend other students and post content in forums. I plan to update my associations and allow a many-to-many relationship
+#### I plan to add more features, such as messaging between mentors and students, and allowing students to friend other students and post content in forums. I plan to update my associations and allow a many-to-many relationship between mentors and students, and add an organizational tool for students to set goals and track their progress with their mentors.
 
 
 
