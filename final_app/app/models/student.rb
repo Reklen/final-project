@@ -3,8 +3,6 @@ class Student < ActiveRecord::Base
 
   belongs_to :mentor
 
-  #has_many :mentors, through: :user_mentors
-
   has_secure_password
 
   validates :first_name, presence: true

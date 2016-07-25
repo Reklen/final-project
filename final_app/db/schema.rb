@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721022612) do
+ActiveRecord::Schema.define(version: 20160725024917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,18 @@ ActiveRecord::Schema.define(version: 20160721022612) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "description"
   end
+
+  create_table "pairs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "mentor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pairs", ["mentor_id"], name: "index_pairs_on_mentor_id", using: :btree
+  add_index "pairs", ["user_id"], name: "index_pairs_on_user_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.string   "email"
@@ -42,18 +53,9 @@ ActiveRecord::Schema.define(version: 20160721022612) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "mentor_id"
+    t.string   "description"
   end
 
-  create_table "user_mentors", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "mentor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "user_mentors", ["mentor_id"], name: "index_user_mentors_on_mentor_id", using: :btree
-  add_index "user_mentors", ["user_id"], name: "index_user_mentors_on_user_id", using: :btree
-
-  add_foreign_key "user_mentors", "mentors"
-  add_foreign_key "user_mentors", "students", column: "user_id"
+  add_foreign_key "pairs", "mentors"
+  add_foreign_key "pairs", "students", column: "user_id"
 end

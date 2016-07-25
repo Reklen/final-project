@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "homes#index"
-
+# replace with resources
   #get "/students", to: "students#index", as: "students"
   #get "/students/new", to: "students#new", as: "new_student"
   #post "/students", to: "students#create"
@@ -8,11 +8,7 @@ Rails.application.routes.draw do
   #patch "/students/:id/edit", to: "students#update"
   #put "/students/:id/edit", to: "students#update"
   #get "/students/:id", to: "students#show"
-  #post "/students/:id/mentor_list", to: "students#select_mentor"
-  ##patient selects physician during sign up##
-  #get "/students/:id/mentor_list", to: "students#mentor_list", as: "mentor_list"
-  #associate patient-id with doctor-id'
-  #post "/students/:id/mentor_list", to: "students#select_mentor", as: "select_mentor_student"
+
 
   resources :students
 
@@ -23,21 +19,20 @@ Rails.application.routes.draw do
   get "/sign_up", to: "students#new"
 
   delete "/session", to: "sessions#destroy"
+  resources :mentors
+ # replace with resources
+  # get "/mentors", to: "mentors#index"
 
-  get "/mentors", to: "mentors#index"
+  # get "/mentors/new", to: "mentors#new", as: "new_mentor"
 
-  get "/mentors/new", to: "mentors#new", as: "new_mentor"
-
-  get "/mentors/:id", to: "mentors#show"
+  # get "/mentors/:id", to: "mentors#show"
 
 
-  post "/mentors", to: "mentors#create"
+  # post "/mentors", to: "mentors#create"
 
-  get "/mentors/:id/edit", to: "mentors#edit"
+  # get "/mentors/:id/edit", to: "mentors#edit"
 
-  patch "/mentors/:id/edit", to: "mentors#update"
-
-  put "/mentors/:id/edit", to: "mentors#update"
+  # put "/mentors/:id/edit", to: "mentors#update"
 
   # get "/mentor/:id/edit(.:format)", to: "users#edit"
 

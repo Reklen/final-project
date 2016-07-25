@@ -1,9 +1,8 @@
 class Mentor < ActiveRecord::Base
   attr_accessor :user_t
 
-  #has_many :user_mentors
   has_many :students
-  has_many :users, through: :user_mentors
+  has_many :users, through: :pairs
 
   has_secure_password
 

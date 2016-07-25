@@ -1,7 +1,21 @@
 <div class="container">
   <div class="row">
+     <div class="row">
     <div>
       Welcome, <%= @mentor.first_name %>!
     </div>
+    <div>
+      <h3>My Profile</h3>
+      <div class="row">
+        <ul>
+      <li>Name: <%= @mentor.first_name %> <%= @mentor.last_name%> </li>
+      <li>Age: <%= @mentor.age %></li>
+      <li>Area of expertise: <%= @mentor.expertise %></li>
+      <li>Description: <%= @mentor.description %></li>
+      <li><%= link_to "Edit", edit_mentor_path(@mentor) %>   <%= link_to "Remove", mentor_path(@mentor), method: :delete, data: { confirm: "Are you sure?" } %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   </div>
   </div>

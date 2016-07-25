@@ -11,7 +11,6 @@ class MentorsController < ApplicationController
   end
 
   def create
-    mentor_params = params.require(:mentor).permit(:email, :first_name, :last_name, :username, :age, :location, :expertise, :availability, :password, :password_digest)
     @mentor = Mentor.new(mentor_params)
     if @mentor.save!
       login(@mentor, 'mentors')
@@ -46,6 +45,21 @@ class MentorsController < ApplicationController
       render :edit
     end
 
+
+  end
+
+def destroy
+    Mentor.find(params[:id]).destroy
+    redirect_to mentors_path
+  end
+
+
+  private
+
+  def mentor_params
+    params.require(:mentor).permit(
+     :email, :first_name, :last_name, :username, :age, :location, :expertise, :availability, :password, :password_digest, :description
+      )
 
   end
 

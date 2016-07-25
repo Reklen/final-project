@@ -1,12 +1,16 @@
 <div class="container">
   <div class="row">
-    List of Available Mentors
+    <h4>List of Available Mentors</h4>
+    <div class="row"> <%= link_to 'Continue to Sign Up Page', new_student_path(@student) %></div>
     <ul>
     <% @mentors.each do |mentor| %>
-        <li><%= mentor.first_name %> <%= mentor.last_name %></li>
+        <li><h5><%= mentor.first_name %> <%= mentor.last_name %></h5></li>
         <li><%= mentor.expertise %></li>
-        <li><%= link_to "Edit", mentors_path(mentor) %> </li>
-        <li>  <%= link_to "Remove", mentors_path(mentor), method: :delete, data: { confirm: "Are you sure?" } %></li>
+        <li><%= mentor.availability %></li>
+        <div>
+    <%= mentor.description %>
+  </div>
+        <li><%= link_to "Edit", edit_mentor_path(mentor) %>   <%= link_to "Remove", mentor_path(mentor), method: :delete, data: { confirm: "Are you sure?" } %></li>
     <% end %>
     </ul>
     <br>
